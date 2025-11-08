@@ -82,6 +82,17 @@
       html.black .dark\:text-slate-300 { color: #ddd; }
       html.black .dark\:text-slate-400 { color: #999; }
       html.black .dark\:text-slate-500 { color: #777; }
+
+      /* Dashboard Overhaul Animations */
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+      @keyframes blob-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes shine { 0% { transform: translateX(-100%) skewX(-20deg); } 100% { transform: translateX(200%) skewX(-20deg); } }
+      @keyframes headline-wobble { 0%, 100% { transform: rotate(-1deg); } 50% { transform: rotate(1deg); } }
+      @keyframes soft-pulse { 0%, 100% { box-shadow: 0 0 15px 0px rgba(79, 70, 229, 0.5); } 50% { box-shadow: 0 0 25px 8px rgba(79, 70, 229, 0.5); } }
+      @keyframes confetti-pop { 
+        0% { transform: scale(0) rotate(0deg); opacity: 1; } 
+        100% { transform: scale(1.5) rotate(360deg); opacity: 0; } 
+      }
     </style>
   <script type="importmap">
 {

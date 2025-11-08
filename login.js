@@ -10,10 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagePreview = document.getElementById('image-preview');
     const deleteImageBtn = document.getElementById('delete-image-btn');
 
-    if (!loginForm || !alertMessage || !loginButton || !avatarUpload || !imagePreviewContainer || !imagePreview || !deleteImageBtn || !uploadLabel) {
+    // New elements for toasts
+    const forgotPasswordLink = document.querySelector('.forgot-password');
+    const createAccountLink = document.querySelector('.create-account-link a');
+    const toastContainer = document.getElementById('toast-container');
+
+    if (!loginForm || !alertMessage || !loginButton || !avatarUpload || !imagePreviewContainer || !imagePreview || !deleteImageBtn || !uploadLabel || !forgotPasswordLink || !createAccountLink || !toastContainer) {
         console.error('One or more required elements are missing from the DOM.');
         return;
     }
+    
+    // --- Toast Notification Logic ---
+    function showToast(message) {
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.classList.add('toast');
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+    
+    forgotPasswordLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showToast('Password recovery will be sent to your email');
+    });
+
+    createAccountLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showToast('Account created successfully!');
+    });
 
     // --- Image Upload Logic ---
     avatarUpload.addEventListener('change', function() {
