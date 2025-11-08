@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HeroBook Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <main>
+        <div class="login-card">
+            <div class="character-illustration">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50,95 C25.2,95 5,74.8 5,50 C5,25.2 25.2,5 50,5 C74.8,5 95,25.2 95,50 C95,74.8 74.8,95 50,95 Z" fill="#c7d2fe"></path><path d="M58.3,64.2 C58.3,64.2 56.4,69.5 50,69.5 C43.6,69.5 41.7,64.2 41.7,64.2 C41.7,64.2 44.3,63 50,63 C55.7,63 58.3,64.2 58.3,64.2 Z" fill="#4338ca"></path><path d="M68,48 C68,52.4 64.4,56 60,56 C55.6,56 52,52.4 52,48 C52,43.6 55.6,40 60,40 C64.4,40 68,43.6 68,48 Z" fill="#FFFFFF"></path><circle cx="61" cy="48" r="4" fill="#312e81"></circle><path d="M48,48 C48,52.4 44.4,56 40,56 C35.6,56 32,52.4 32,48 C32,43.6 35.6,40 40,40 C44.4,40 48,43.6 48,48 Z" fill="#FFFFFF"></path><circle cx="39" cy="48" r="4" fill="#312e81"></circle><path d="M78,65 C78,65 74,58 70,60 C66,62 68,70 68,70 L80,72 C80,72 82,67 78,65 Z" fill="#a5b4fc" class="waving-hand"></path></svg>
+            </div>
+            
+            <h1>Welcome Back!</h1>
+            <p class="subtitle">Log in to create your next hero.</p>
+
+            <form id="login-form" novalidate>
+                <div class="alert" id="alert-message" role="alert" aria-live="assertive"></div>
+                
+                <div class="image-upload-wrapper">
+                    <div id="image-preview-container" class="image-preview-container" style="display: none;">
+                        <img id="image-preview" src="#" alt="Avatar Preview" />
+                        <button type="button" id="delete-image-btn" class="delete-image-btn" aria-label="Delete image">&times;</button>
+                    </div>
+                    <label for="avatar-upload" id="upload-label" class="upload-label">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9.25 13.25a.75.75 0 001.5 0V4.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 101.09 1.03L9.25 4.636v8.614z"></path><path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path></svg>
+                        <span>Upload Avatar</span>
+                    </label>
+                    <input type="file" id="avatar-upload" accept="image/*" hidden>
+                </div>
+
+                <div class="input-group">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"></path><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"></path></svg>
+                    <input type="email" id="email" required placeholder="Email or Username">
+                </div>
+
+                <div class="input-group">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"></path></svg>
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-button">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.59L7.3 9.24a.75.75 0 00-1.1 1.02l3.25 3.5a.75.75 0 001.1 0l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V6.75z" clip-rule="evenodd"></path></svg>
+                    <span>Log In</span>
+                </button>
+            </form>
+            <p class="create-account-link">
+                Don't have an account? <a href="#">Create one!</a>
+            </p>
+        </div>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

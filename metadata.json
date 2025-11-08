@@ -1,0 +1,7 @@
+{
+  "name": "HeroBook Maker ",
+  "description": "Parents upload photos of their child (age 5–10) and receive identity-consistent 3D cartoon avatars and 3 superhero story scene images, bringing their child's heroic alter-ego to life.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
